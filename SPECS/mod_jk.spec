@@ -29,18 +29,19 @@
 %define aprincludes %(%{aprconf} --includes 2>/dev/null)
 
 # Update commitid and serial when new sources and release version are available
-%global commitid 1c14fc065bc133887fdde55cab954691b3dc3aac
-%global serial 23
+%global commitid 3ad622409ae3335df9f353bef8ebc4d72a70fd6d
+%global serial 1
 
 Name:      mod_jk
 Epoch:     0
-Version:   1.2.48
+Version:   1.2.49
 Release:   %{serial}%{?dist}
 Summary:   Tomcat mod_jk connector for Apache
 
 Group:     Internet/WWW/Servers
 License:   ASL 2.0
 URL:       http://tomcat.apache.org
+# You can get the tarball from https://github.com/apache/tomcat-connectors/archive/3ad622409ae3335df9f353bef8ebc4d72a70fd6d.tar.gz
 Source0:   tomcat-connectors-%{commitid}.tar.gz
 Source1:   %{pkg_name}.conf.sample
 Source2:   uriworkermap.properties.sample
@@ -171,6 +172,9 @@ command="s|/usr/local/bin\b|%{_bindir}|"
 %endif
 
 %changelog
+* Thu Feb 29 2024 Sokratis Zappis <szappis@redhat.com> - 1.2.49-1
+- Related: RHEL-27511 - Rebase to upstream 1.2.49 release
+
 * Thu Jan 12 2023 Sokratis Zappis <szappis@rehdat.com> - 1.2.48-23
 - Add entries for tmpfiles.d mechanism
 - Remove /var/run legacy location
