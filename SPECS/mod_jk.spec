@@ -29,19 +29,19 @@
 %define aprincludes %(%{aprconf} --includes 2>/dev/null)
 
 # Update commitid and serial when new sources and release version are available
-%global commitid 3ad622409ae3335df9f353bef8ebc4d72a70fd6d
+%global commitid 9612683ac09ebb06aca9ad25cdd7274152c6d031
 %global serial 1
 
 Name:      mod_jk
 Epoch:     0
-Version:   1.2.49
-Release:   %{serial}%{?dist}
+Version:   1.2.50
+Release:   %{serial}%{?dist}.1
 Summary:   Tomcat mod_jk connector for Apache
 
 Group:     Internet/WWW/Servers
 License:   ASL 2.0
 URL:       http://tomcat.apache.org
-# You can get the tarball from https://github.com/apache/tomcat-connectors/archive/3ad622409ae3335df9f353bef8ebc4d72a70fd6d.tar.gz
+# You can get the tarball from https://github.com/apache/tomcat-connectors/archive/9612683ac09ebb06aca9ad25cdd7274152c6d031.tar.gz
 Source0:   tomcat-connectors-%{commitid}.tar.gz
 Source1:   %{pkg_name}.conf.sample
 Source2:   uriworkermap.properties.sample
@@ -172,6 +172,9 @@ command="s|/usr/local/bin\b|%{_bindir}|"
 %endif
 
 %changelog
+* Fri Sep 13 2024 Sokratis Zappis <szappis@redhat.com> - 1.2.50-1
+- Resolves: RHEL-58855 - Rebase to upstream 1.2.50 release
+
 * Thu Feb 29 2024 Sokratis Zappis <szappis@redhat.com> - 1.2.49-1
 - Related: RHEL-27511 - Rebase to upstream 1.2.49 release
 
