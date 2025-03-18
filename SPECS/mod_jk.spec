@@ -172,8 +172,8 @@ command="s|/usr/local/bin\b|%{_bindir}|"
 %endif
 
 %changelog
-* Fri Sep 13 2024 Sokratis Zappis <szappis@redhat.com> - 1.2.50-1
-- Resolves: RHEL-58855 - Rebase to upstream 1.2.50 release
+* Thu Dec 05 2024 Sokratis Zappis <szappis@redhatc.com> - 1.2.50-1.el9_5.1
+- Resolves: RHEL-70161 - Rebuild mod_jk against httpd 2.4.62
 
 * Thu Feb 29 2024 Sokratis Zappis <szappis@redhat.com> - 1.2.49-1
 - Related: RHEL-27511 - Rebase to upstream 1.2.49 release
